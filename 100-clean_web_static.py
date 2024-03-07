@@ -11,9 +11,11 @@ def do_clean(number=0):
 
     number = max(1, int(number))
 
+    number += 1
+
     # Delete local archives except the most recent 'number' ones
-    local('cd versions ; ls -t | tail -n +{} | xargs rm -rf'.format(number + 1))
+    local('cd versions ; ls -t | tail -n +{} | xargs rm -rf'.format(number))
 
     # Delete remote archives except the most recent 'number' ones
     path = '/data/web_static/releases'
-    run('cd {} ; ls -t | tail -n +{} | xargs rm -rf'.format(path, number + 1))
+    run('cd {} ; ls -t | tail -n +{} | xargs rm -rf'.format(path, number))
