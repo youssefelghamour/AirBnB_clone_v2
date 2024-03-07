@@ -9,7 +9,7 @@ env.user = "ubuntu"
 def do_clean(number=0):
     """ Deletes out-of-date archives """
 
-    number = max(1, int(number))
+    number = 1 if int(number) == 0 else int(number)
 
     number += 1
 
