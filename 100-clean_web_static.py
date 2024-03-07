@@ -9,9 +9,12 @@ env.user = "ubuntu"
 def do_clean(number=0):
     """ Deletes out-of-date archives """
 
-    number = 1 if int(number) == 0 else int(number)
+    number = int(number)
 
-    number += 1
+    if number == 0:
+        number = 2
+    else:
+        number += 1
 
     # Delete local archives except the most recent 'number' ones
     local('cd versions ; ls -t | tail -n +{} | xargs rm -rf'.format(number))
