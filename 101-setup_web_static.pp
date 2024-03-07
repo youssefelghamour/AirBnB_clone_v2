@@ -10,27 +10,42 @@ exec {'install Nginx':
   command  => 'sudo apt-get -y install nginx',
 } ->
 
-exec {'/data/web_static/releases/test/':
-  provider => shell,
-  command  => 'sudo mkdir -p /data/web_static/releases/test/',
+file { '/data':
+  ensure => 'directory',
 } ->
 
-exec {'/data/web_static/shared/':
-  provider => shell,
-  command  => 'sudo mkdir -p /data/web_static/shared/',
+file { '/data/web_static':
+  ensure => 'directory',
 } ->
 
-exec {'fake html file':
-  provider => shell,
-  command  => 'echo "Holberton School" | sudo tee /data/web_static/releases/test/index.html',
+file { '/data/web_static/releases':
+  ensure => 'directory',
 } ->
 
-exec {'add symbolic link':
-  provider => shell,
-  command  => 'sudo ln -sf /data/web_static/releases/test/ /data/web_static/current',
+file { '/data/web_static/releases/test':
+  ensure => 'directory',
+} ->
+
+file { '/data/web_static/shared':
+  ensure => 'directory',
+} ->
+
+file { '/data/web_static/releases/test/index.html':
+  ensure  => 'present',
+  content => "Holberton School Puppet\n",
+} ->
+
+file { '/data/web_static/current':
+  ensure => 'link',
+  target => '/data/web_static/releases/test',
+} ->
+
+exec { 'chown -R ubuntu:ubuntu /data/':
+  path => '/usr/bin/:/usr/local/bin/:/bin/',
 } ->
 
 exec {'add location block':
+  onlyif   => 'test -f /etc/nginx/sites-available/default',
   provider => shell,
   command  => 'sudo sed -i \'41i\\tlocation /hbnb_static/ {\n\t\talias /data/web_static/current/;\n\t\tautoindex off;\n\t}\n\' /etc/nginx/sites-available/default',
 } ->
