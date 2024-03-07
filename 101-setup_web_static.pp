@@ -42,7 +42,7 @@ file { '/data/web_static/current':
 
 exec { 'chown -R ubuntu:ubuntu /data/':
   path => '/usr/bin/:/usr/local/bin/:/bin/',
-} ->
+}
 
 exec {'add location block':
   onlyif   => 'test -f /etc/nginx/sites-available/default',
