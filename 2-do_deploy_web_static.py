@@ -1,5 +1,12 @@
 #!/usr/bin/python3
-""" Fabric script that distributes an archive to the web servers """
+""" Fabric script that distributes an archive to the web servers
+
+    Usage: fab -f 2-do_deploy_web_static.py do_deploy:archive_path=path
+           -i path to private key
+
+    ex: fab -f 2-do_deploy_web_static.py do_deploy:archive_path=versions/we
+        b_static_20240307104334.tgz -i ~/.ssh/id_rsa
+"""
 from fabric.api import *
 import os
 
