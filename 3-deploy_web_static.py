@@ -8,9 +8,15 @@ from datetime import datetime
 env.hosts = ['18.204.9.11', '18.233.66.83']
 env.user = "ubuntu"
 
+# Use an environment variable to store the archive path
+env.archive_path = None
+
 
 def do_pack():
     """ generates the archive """
+
+    if env.archive_path:
+        return env.archive_path
 
     if not os.path.exists('versions'):
         local('mkdir versions')
@@ -24,6 +30,7 @@ def do_pack():
     if result.failed:
         return None
     else:
+        env.archive_path = file_path
         return file_path
 
 
