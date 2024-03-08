@@ -1,13 +1,13 @@
-# 0x02. AirBnB clone - MySQL
+# 0x03. AirBnB clone - Deploy static
 
 ## Description
-This project marks the second phase of developing an AirBnB clone, now incorporating MySQL as the database backend. The primary focus is on leveraging Python, Object-Oriented Programming (OOP), SQL, and the SQLAlchemy ORM to create a robust and scalable system. This project is a collaboration between Mahmoud Hammam, and Youssef El Ghamour.
+This project marks the fourth phase of developing an AirBnB clone, with a primary focus on deploying static content to the web servers. The overall project now incorporates Python, Object-Oriented Programming (OOP), SQL, and the SQLAlchemy ORM, integrates a static web page and utilizes bash and puppet scripts to automate the deployment of static content. This project is a collaboration between Mahmoud Hammam and Youssef El Ghamour.
 
 ## Command Interpreter
 The command interpreter allows users to interact with the AirBnB objects by performing various operations, including creating new objects, retrieving objects from files or databases, updating attributes, and more.
 
 ## How to start it:
-* Clone this repository: `git clone "https://github.com/MahmoudHammam0/AirBnB_clone_v2.git"`
+* Clone this repository: `git clone "https://github.com/youssefelghamour/AirBnB_clone_v2.git"`
 * Access the AirBnb directory: `cd AirBnB_clone_v2`
 * Run hbnb (interactively): `./console` and enter command
 * Run hbnb (non-interactively): `echo "<command>" | ./console.py`
@@ -91,6 +91,18 @@ $
     - Directory containing for the storage class.
 
       ##### `test_file_storage.py` - unittest for the FileStorage class.
+
+#### `versions`
+- Directory containing archived versions of the web_static folder.
+
+##### `0-setup_web_static.sh` - Shell script for setting up the web servers.
+##### `1-pack_web_static.py` - Python script for creating a compressed archive of the web_static content.
+##### `2-do_deploy_web_static.py` - Python script for deploying the compressed archive to the web servers.
+##### `3-deploy_web_static.py` - Fabric script for automating the deployment process.
+##### `100-clean_web_static.py` - Fabric script for deleting out-of-date archives.
+##### `101-setup_web_static.pp` - Puppet script for configuring Nginx and creating directories and files.
+##### `setup_mysql_dev.sql` - SQL script for setting up the development MySQL database.
+##### `setup_mysql_test.sql` - SQL script for setting up the test MySQL database.
 
 ## Authors
 * **Mahmoud Hammam** - [MahmoudHammam0](https://github.com/MahmoudHammam0)
