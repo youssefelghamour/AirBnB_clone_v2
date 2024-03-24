@@ -97,6 +97,12 @@ $
 #### `versions`
 - Directory containing archived versions of the web_static folder.
 
+#### `web_flask`
+- Main directory for the Flask application.
+
+#### `web_static`
+- Main directory for the web page.
+
 ##### `0-setup_web_static.sh` - Shell script for setting up the web servers.
 ##### `1-pack_web_static.py` - Python script for creating a compressed archive of the web_static content.
 ##### `2-do_deploy_web_static.py` - Python script for deploying the compressed archive to the web servers.
