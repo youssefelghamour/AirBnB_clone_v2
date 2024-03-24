@@ -1,7 +1,9 @@
-# 0x03. AirBnB clone - Deploy static
+# AirBnB clone
 
 ## Description
-This project marks the fourth phase of developing an AirBnB clone, with a primary focus on deploying static content to the web servers. The overall project now incorporates Python, Object-Oriented Programming (OOP), SQL, and the SQLAlchemy ORM, integrates a static web page and utilizes bash and puppet scripts to automate the deployment of static content. This project is a collaboration between Mahmoud Hammam and Youssef El Ghamour.
+This project is an Airbnb clone developed as part of the ALX Software Engineering program as a collaboration between Mahmoud Hammam and Youssef El Ghamour, aiming to replicate the functionality and user experience of the Airbnb platform.
+
+The overall project incorporates Python, Object-Oriented Programming (OOP), SQL, and the SQLAlchemy ORM, integrates a static web page, populates it with data from the database using  Flask, and dynamically generates content displayed on the web page using Jina templates. The project also contains bash and puppet scripts to automate the deployment of static content to the web servers.
 
 ## Command Interpreter
 The command interpreter allows users to interact with the AirBnB objects by performing various operations, including creating new objects, retrieving objects from files or databases, updating attributes, and more.
