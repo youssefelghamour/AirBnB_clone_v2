@@ -13,7 +13,7 @@ def hbnb_filters():
     """ displays a HTML page with filters for HBNB """
     states = sorted(storage.all(State).values(), key=lambda x: x.name)
     amenities = sorted(storage.all(Amenity).values(), key=lambda x: x.name)
-    return render_template('10-hbnb_filters.py', states=states, amenities=amenities)
+    return render_template('10-hbnb_filters.html', states=states, amenities=amenities)
 
 
 @app.teardown_appcontext
