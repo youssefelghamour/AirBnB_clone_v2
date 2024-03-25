@@ -4,7 +4,7 @@
 
 This project marks the fifth phase of developing an AirBnB clone, with the primary focus on creating a Flask web application for displaying and interacting with AirBnB data. The web flask project ties the static HTML front end with the dynamic database back end, displaying database data in a static HTML page.
 
-The overall project now incorporates Python, Object-Oriented Programming (OOP), SQL, and the SQLAlchemy ORM, integrates a static web page, populates it with data from the database using the Flask web framework. This is accomplished by creating routes in Flask that render HTML templates and use data fetched from the database (via SQLAlchemy and the storage system) to dynamically generate content displayed on the web page using Jina templates. The project also utilizes bash and puppet scripts to automate the deployment of static content.
+The overall project now incorporates Python, Object-Oriented Programming (OOP), SQL, and the SQLAlchemy ORM, integrates a static web page, populates it with data from the database using the Flask web framework. This is accomplished by creating routes in Flask that render HTML templates and use data fetched from the database (via SQLAlchemy and the storage system) to dynamically generate content displayed on the web page using Jinja templates. The project also utilizes bash and puppet scripts to automate the deployment of static content.
 
 ## Project structure
 
